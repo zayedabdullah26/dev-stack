@@ -42,4 +42,4 @@
 # 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 **Answer:** 
 - Parent to Child: Data is passed down as attributes called "props".
-- Child to Parent: The parent passes a callback function down via props, and the child calls that function to send data or trigger an action back to the parent.
+- Child to Parent: The parent passes a callback function down via props, and the child calls that function to send data or trigger an action back to the parent."# dev-stack" 
