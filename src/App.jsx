@@ -9,7 +9,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    fetch('./technologies.json')
+    fetch(`${import.meta.env.BASE_URL}technologies.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch JSON');
         return res.json();
@@ -68,7 +68,7 @@ export default function App() {
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 text-slate-700 focus:outline-none"
             >
@@ -115,7 +115,7 @@ export default function App() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-            Build Your Ideal <br className="hidden sm:inline"/>
+            Build Your Ideal <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
               Development Stack
             </span>
@@ -136,8 +136,8 @@ export default function App() {
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-lg">
             <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-pink-500/20 to-violet-600/20 rounded-full blur-3xl"></div>
-            <img 
-              src="./banner-stack.png" 
+            <img
+              src={`${import.meta.env.BASE_URL}banner-stack.png`}
               alt="Dev Stack Hero Banner"
               className="relative z-10 w-full h-auto object-contain drop-shadow-xl"
             />
@@ -186,11 +186,10 @@ export default function App() {
                       <button
                         onClick={() => addToStack(tech)}
                         disabled={isAdded}
-                        className={`w-full text-sm font-medium py-2.5 rounded-xl transition ${
-                          isAdded
+                        className={`w-full text-sm font-medium py-2.5 rounded-xl transition ${isAdded
                             ? 'bg-emerald-600 text-white cursor-not-allowed'
                             : 'bg-slate-900 hover:bg-slate-800 text-white'
-                        }`}
+                          }`}
                       >
                         {isAdded ? '✓ Added to Stack' : 'Add to Stack'}
                       </button>
@@ -205,7 +204,7 @@ export default function App() {
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-slate-900 text-base">Your Stack</h3>
                   {stack.length > 0 && (
-                    <button 
+                    <button
                       onClick={clearStack}
                       className="text-xs text-rose-600 hover:underline font-medium"
                     >
@@ -249,8 +248,8 @@ export default function App() {
         )}
       </section>
 
-      
-  {/* Footer Section */}
+
+      {/* Footer Section */}
       <footer className="border-t border-slate-100 mt-20 bg-white pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 pb-12 border-b border-slate-100">
