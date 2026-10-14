@@ -9,7 +9,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    fetch('/technologies.json')
+    fetch('./technologies.json')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch JSON');
         return res.json();
@@ -137,7 +137,7 @@ export default function App() {
           <div className="relative w-full max-w-lg">
             <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-pink-500/20 to-violet-600/20 rounded-full blur-3xl"></div>
             <img 
-              src="/banner-stack.png" 
+              src="./banner-stack.png" 
               alt="Dev Stack Hero Banner"
               className="relative z-10 w-full h-auto object-contain drop-shadow-xl"
             />
